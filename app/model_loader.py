@@ -1,11 +1,14 @@
 import os
-import pandas as pd
 import joblib
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "model", "credit_model.pkl")
 
-model = joblib.load(MODEL_PATH)
+def load_model():
+    return joblib.load(MODEL_PATH)
+
+model = load_model()
+
 
 def predict(data):
 
