@@ -8,7 +8,7 @@ from fastapi import FastAPI, Depends
 from app.model_loader import predict
 from app.database import get_db, engine
 from app.models import Application, Base
-from app.schemas import ApplicationResponse
+from app.schemas import ApplicationResponse 
 from fastapi.middleware.cors import CORSMiddleware
 
 try:
@@ -19,12 +19,13 @@ except Exception as e:
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000",   # React frontend
+    "http://localhost:3000",
+    "https://credit-score-frontend-vercel.vercel.app"
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
