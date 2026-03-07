@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pydantic
+joblib
+xgboost
+psycopg2-binary
+python-dotenv
